@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        /* Modern, clean aesthetic styles */
+        :root {
+            --primary-color: #003366;
+            --accent-color: #0066cc;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.2rem;
+        }
+
+        .headshot {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #eef4fb;
+            color: var(--accent-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-card {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-card h3 {
+            margin: 0 0 0.4rem 0;
+            color: #222;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Replace headshot.jpg with your actual photo file name -->
+        <img src="headshot.jpg" alt="Profile Headshot" class="headshot" onerror="this.style.display='none'">
+        <h1>Your Name</h1>
+        <p>Rutgers Business School Student | Aspiring Data Analyst</p>
+    </header>
+
+    <div class="container">
+
+        <!-- 1. PERSONAL STATEMENT (2 Points) -->
+        <section id="statement">
+            <h2>Personal Statement</h2>
+            <p><strong>I am an ambitious Rutgers Business School student specializing in data analytics and financial strategy, dedicated to using technology to optimize business operations and drive data-informed decision-making.</strong></p>
+        </section>
+
+        <!-- 2. SKILLS SHOWCASE (2 Points) -->
+        <section id="skills">
+            <h2>Technical & Professional Skills</h2>
+            <div class="tag-container">
+                <span class="tag">Data Analysis & Visualization</span>
+                <span class="tag">Python</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Microsoft Excel (Advanced)</span>
+                <span class="tag">GitHub & Version Control</span>
+                <span class="tag">Project Management</span>
+                <span class="tag">Financial Modeling</span>
+            </div>
+        </section>
+
+        <!-- 3. PROJECTS SECTION (2 Points: Requires 2-3 projects) -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="project-card">
+                <h3>Project 1: E-Commerce Sales Performance Dashboard</h3>
+                <p>Analyzed over 10,000 retail transaction records using Excel and Python to identify key revenue drivers and seasonality trends, resulting in actionable inventory recommendations.</p>
+                <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project on GitHub &rarr;</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Project 2: Personal Portfolio Website</h3>
+                <p>Designed, developed, and deployed a responsive personal portfolio using HTML, CSS, and GitHub Pages to showcase academic projects and technical competency.</p>
+                <a href="https://github.com/yourusername" target="_blank" class="project-link">View Repository &rarr;</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Project 3: Financial Valuation & Market Analysis</h3>
+                <p>Conducted a discounted cash flow (DCF) valuation and competitive analysis for a Fortune 500 company as part of a university case study competition.</p>
+                <a href="https://github.com/yourusername" target="_blank" class="project-link">View Case Study &rarr;</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Your Name. Hosted on GitHub Pages.</p>
+    </footer>
+
+</body>
+</html>
