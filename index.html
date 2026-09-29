@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siya Kabra | Portfolio</title>
+    <style>
+        :root {
+            --bg-main: #D2E0D3;
+            --box-bg: #F0DDD6;
+            --box-border: #F0EEEA;
+            --accent-link: #97B3AE;
+            --text-muted-1: #D6CBBF;
+            --text-muted-2: #F2C3B9;
+            --text-dark: #2c3e50;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Top Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            border-bottom: 2px solid var(--box-border);
+            padding: 0.8rem 1.5rem;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        nav a {
+            color: var(--accent-link);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: var(--white);
+            color: var(--text-dark);
+            padding: 3rem 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--box-border);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        header p.subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-link);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .personal-statement {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            font-weight: 500;
+            background: var(--box-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--box-border);
+            text-align: center;
+        }
+
+        .container {
+            display: block;
+            max-width: 900px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--white);
+            margin-bottom: 2.5rem;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--box-border);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--text-dark);
+            border-bottom: 2px solid var(--box-bg);
+            padding-bottom: 0.6rem;
+            margin-bottom: 2rem;
+            display: inline-block;
+            font-size: 1.8rem;
+        }
+
+        /* Skills Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .skills-card {
+            background: var(--box-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid var(--box-border);
+            text-align: center;
+        }
+
+        .skills-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+        }
+
+        .skill-badge {
+            background-color: var(--white);
+            color: var(--text-dark);
+            border: 1.5px solid var(--accent-link);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Projects Layout */
+        .project-card {
+            background: var(--box-bg);
+            padding: 1.8rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border: 2px solid var(--box-border);
+            text-align: center;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-title {
+            color: var(--text-dark);
+            font-size: 1.35rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--accent-link);
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            font-size: 0.98rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            background-color: var(--accent-link);
+            color: var(--white);
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: lowercase;
+            margin-top: 0.5rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .toggle-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Collapsible Text Area */
+        .more-info-content {
+            display: none;
+            margin-top: 1.2rem;
+            padding: 1.2rem;
+            background: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--box-border);
+            text-align: left;
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .more-info-content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background-color: var(--white);
+            color: var(--text-dark);
+            border-top: 2px solid var(--box-border);
+        }
+
+        footer a {
+            color: var(--accent-link);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Menu -->
+    <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <h1>Siya Kabra</h1>
+        <p class="subtitle">Rutgers Business School | Finance & Business Analytics</p>
+        <div class="personal-statement">
+            I am an ambitious sophomore majoring in Finance and Business Analytics & Information Technology, seeking roles to further utilize my skills in financial modeling and data analytics to evaluate risk and optimize strategic decision-making.
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills Showcase</h2>
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <h3>Technical & Analytical</h3>
+                    <div class="skills-tags">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">Tax Prep (Drake Software, 1040)</span>
+                        <span class="skill-badge">Financial Modeling</span>
+                        <span class="skill-badge">Equity Research</span>
+                        <span class="skill-badge">SIE Concepts</span>
+                        <span class="skill-badge">Financial Calculators</span>
+                        <span class="skill-badge">Graphic Design</span>
+                        <span class="skill-badge">Web Design & SEO</span>
+                        <span class="skill-badge">Microsoft Office Suite</span>
+                    </div>
+                </div>
+                <div class="skills-card">
+                    <h3>Professional & Leadership</h3>
+                    <div class="skills-tags">
+                        <span class="skill-badge">Strategic Problem Solving</span>
+                        <span class="skill-badge">Team Leadership</span>
+                        <span class="skill-badge">Operations</span>
+                        <span class="skill-badge">Educational Mentorship</span>
+                        <span class="skill-badge">Advising</span>
+                        <span class="skill-badge">Cross-Functional Collaboration</span>
+                        <span class="skill-badge">Public Speaking</span>
+                        <span class="skill-badge">Pitch Presentations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3 class="project-title">Project 1</h3>
+                <div class="project-subtitle">Bender Trust Research Project (LIBOR) | Rutgers Business School</div>
+                <p class="project-desc">Conducted a comprehensive equity analysis of Energy Fuels Inc. ($UUUU) within the uranium and rare earths sector. Built revenue forecasts, valuation models (forward P/E, EV/EBITDA), and evaluated competitive strategy using Porter’s Five Forces and SWOT frameworks before presenting a final investment pitch to judges.</p>
+                
+                <button class="toggle-btn" onclick="toggleInfo('project1-info', this)">more info</button>
+                
+                <div id="project1-info" class="more-info-content">
+                    I completed the Bender Trust Research Project as part of a team, conducting an equity analysis of Energy Fuels Inc. ($UUUU) within the uranium and rare earths sector of the energy and mining industry. Together, my team used SEC filings (10-Ks and quarterly transcripts), along with company presentations and open data to build revenue forecasts, valuation models, and comparative analyses. We applied Porter’s Five Forces, SWOT analysis, potential risks and mitigants, and industry growth drivers to evaluate the company’s competitive position and long-term earnings potential. My team developed a detailed outlook on the company and assessed the appropriate valuation multiple using metrics such as forward P/E and EV/EBITDA. We concluded the project with a polished investment pitch, presenting our analysis and defending our recommendation for the stock before a panel of judges.
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3 class="project-title">Project 2</h3>
+                <div class="project-subtitle">Ace Tutors Program | Non-Profit Initiative</div>
+                <p class="project-desc">Founded and managed a youth-led non-profit providing free tutoring to K–12 students in my community. Led a team of 7 tutors to deliver 130+ instruction hours to 170+ students while expanding social media engagement to 430+ followers and 2,000+ views.</p>
+                
+                <button class="toggle-btn" onclick="toggleInfo('project2-info', this)">more info</button>
+                
+                <div id="project2-info" class="more-info-content">
+                    I started Ace Tutors during high school in the aftermath of COVID-19. As someone who lost valuable learning time because of virtual schooling, I wanted to help other students who also felt lost and struggled to transition back into in-person learning.
+                    Ace Tutors is a youth-led, non-profit online tutoring program that I founded with the mission of ensuring that students in grades K–12 receive the academic support they need in subjects such as Mathematics, English, Computer Science, and Science. Through free tutoring sessions over the summer, our team of tutors help students strengthen their existing conceptual knowledge while introducing them to new concepts that broaden their understanding. Now that all the tutors are in college, we provide Advising Sessions for high schoolers instead of standard tutoring services!
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <p>&copy; Siya Kabra | Rutgers Business School</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="mailto:siya.kabra@rutgers.edu">Email Me</a> | 
+            <a href="https://www.linkedin.com/in/siyakabra" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript for Collapsible Text -->
+    <script>
+        function toggleInfo(id, btn) {
+            var content = document.getElementById(id);
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                btn.innerText = 'more info';
+            } else {
+                content.classList.add('active');
+                btn.innerText = 'less info';
+            }
+        }
+    </script>
+
+</body>
+</html>
