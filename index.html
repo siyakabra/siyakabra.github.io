@@ -33,6 +33,32 @@
             line-height: 1.6;
         }
 
+        /* Top Sticky Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--white);
+            border-bottom: 2px solid var(--box-border);
+            padding: 0.8rem 1.5rem;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        nav a {
+            color: var(--accent-link);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 1rem;
+            font-size: 0.95rem;
+            transition: opacity 0.2s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
         header {
             background-color: var(--white);
             color: var(--text-dark);
@@ -64,6 +90,14 @@
             border-radius: 12px;
             border: 2px solid var(--box-border);
             text-align: center;
+        }
+
+        .header-links {
+            margin-top: 1.2rem;
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .container {
@@ -167,8 +201,17 @@
             margin-right: auto;
         }
 
-        /* Toggle Button */
-        .toggle-btn {
+        .project-actions {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons Styling */
+        .toggle-btn, .link-btn {
+            display: inline-block;
             background-color: var(--accent-link);
             color: var(--white);
             border: none;
@@ -178,11 +221,11 @@
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: lowercase;
-            margin-top: 0.5rem;
-            transition: background-color 0.2s ease;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
         }
 
-        .toggle-btn:hover {
+        .toggle-btn:hover, .link-btn:hover {
             opacity: 0.9;
         }
 
@@ -203,12 +246,23 @@
             display: block;
         }
 
+        /* Footer & Headshot */
         footer {
             text-align: center;
             padding: 2.5rem 1.5rem;
             background-color: var(--white);
             color: var(--text-dark);
             border-top: 2px solid var(--box-border);
+        }
+
+        .headshot {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-link);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
         }
 
         footer a {
@@ -225,11 +279,23 @@
 </head>
 <body>
 
+    <!-- Top Navigation Menu -->
+    <nav>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <header>
         <h1>Siya Kabra</h1>
         <p class="subtitle">Rutgers Business School | Finance and Business Analytics & Information Technology</p>
         <div class="personal-statement">
             I am an ambitious sophomore majoring in Finance and Business Analytics & Information Technology, seeking roles to further utilize my skills in financial modeling and data analytics to evaluate risk and optimize strategic decision-making.
+            
+            <div class="header-links">
+                <a href="mailto:siya.kabra@rutgers.edu" class="link-btn">email me</a>
+                <a href="https://www.linkedin.com/in/siyakabra" target="_blank" class="link-btn">linkedin</a>
+            </div>
         </div>
     </header>
 
@@ -277,7 +343,10 @@
                 <div class="project-subtitle">Bender Trust Research Project (LIBOR) | Rutgers Business School</div>
                 <p class="project-desc">Conducted a comprehensive equity analysis of Energy Fuels Inc. ($UUUU) within the uranium and rare earths sector. Built revenue forecasts, valuation models (forward P/E, EV/EBITDA), and evaluated competitive strategy using Porter’s Five Forces and SWOT frameworks before presenting a final investment pitch to judges.</p>
                 
-                <button class="toggle-btn" onclick="toggleInfo('project1-info', this)">more info</button>
+                <div class="project-actions">
+                    <a href="https://www.rulibor.com/bender" target="_blank" class="link-btn">link</a>
+                    <button class="toggle-btn" onclick="toggleInfo('project1-info', this)">more info</button>
+                </div>
                 
                 <div id="project1-info" class="more-info-content">
                     I completed the Bender Trust Research Project as part of a team, conducting an equity analysis of Energy Fuels Inc. ($UUUU) within the uranium and rare earths sector of the energy and mining industry. Together, my team used SEC filings (10-Ks and quarterly transcripts), along with company presentations and open data to build revenue forecasts, valuation models, and comparative analyses. We applied Porter’s Five Forces, SWOT analysis, potential risks and mitigants, and industry growth drivers to evaluate the company’s competitive position and long-term earnings potential. My team developed a detailed outlook on the company and assessed the appropriate valuation multiple using metrics such as forward P/E and EV/EBITDA. We concluded the project with a polished investment pitch, presenting our analysis and defending our recommendation for the stock before a panel of judges.
@@ -290,7 +359,10 @@
                 <div class="project-subtitle">Ace Tutors Program | Non-Profit Initiative</div>
                 <p class="project-desc">Founded and managed a youth-led non-profit providing free tutoring to K–12 students in my community. Led a team of 7 tutors to deliver 130+ instruction hours to 170+ students while expanding social media engagement to 430+ followers and 2,000+ views.</p>
                 
-                <button class="toggle-btn" onclick="toggleInfo('project2-info', this)">more info</button>
+                <div class="project-actions">
+                    <a href="https://theacetutors.wixsite.com/acetutors" target="_blank" class="link-btn">link</a>
+                    <button class="toggle-btn" onclick="toggleInfo('project2-info', this)">more info</button>
+                </div>
                 
                 <div id="project2-info" class="more-info-content">
                     I started Ace Tutors during high school in the aftermath of COVID-19. As someone who lost valuable learning time because of virtual schooling, I wanted to help other students who also felt lost and struggled to transition back into in-person learning.
@@ -303,6 +375,7 @@
 
     <!-- Contact & Footer -->
     <footer id="contact">
+        <img src="headshot.jpg" alt="Siya Kabra Headshot" class="headshot">
         <p>&copy; Siya Kabra | Rutgers Business School</p>
         <p style="margin-top: 0.5rem;">
             <a href="mailto:siya.kabra@rutgers.edu">Email Me</a> | 
